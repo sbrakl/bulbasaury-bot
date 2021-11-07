@@ -1,2 +1,12 @@
 # Virtual folder
 .venv
+
+# Secret file
+.env
+
+# VS Code folders
+.vscode
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
