@@ -10,4 +10,7 @@ def loadConf():
     calling_context = next(context for context in stack if context.filename != __file__)
     root_dir = os.path.dirname(calling_context.filename)
     env_path = Path(root_dir) / '.env'
-    load_dotenv(dotenv_path=env_path)
+    if os.path.exists(env_path):
+        load_dotenv(dotenv_path=env_path)
+    else:
+        raise FileNotFoundError('.env file is require at root of the project which contains all secrets loaded by application')
